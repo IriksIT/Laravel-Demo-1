@@ -1,0 +1,12 @@
+services:
+  app:
+    image: php:8.5-cli
+    container_name: laravel-demo-1
+    working_dir: /var/www/html
+    command: php artisan serve --host=0.0.0.0 --port=8000
+    volumes:
+      - ./app:/var/www/html
+    ports:
+      - "8001:8000"
+    environment:
+      APP_URL: http://localhost:8001
